@@ -1,15 +1,17 @@
-import { Maskify } from "../src/maskify";
+import { DataVeil } from "../src/dataVeil";
 
-describe("Maskify", () => {
+describe("DataVeil", () => {
   test("masks card numbers with default options", () => {
-    expect(Maskify.maskCardNumber("1234567812345678")).toBe("************5678");
+    expect(DataVeil.maskCardNumber("1234567812345678")).toBe(
+      "************5678"
+    );
   });
 
   // TODO: To be fixed later!
 
   //   test("masks card numbers with custom options", () => {
   //     expect(
-  //       Maskify.maskCardNumber("1234567812345678", {
+  //       DataVeil.maskCardNumber("1234567812345678", {
   //         unmaskedStartDigits: 2,
   //         unmaskedEndDigits: 4,
   //       })
@@ -17,58 +19,58 @@ describe("Maskify", () => {
   //   });
 
   //   test("masks email addresses with default options", () => {
-  //     expect(Maskify.maskEmail("example@example.com")).toBe(
+  //     expect(DataVeil.maskEmail("example@example.com")).toBe(
   //       "ex*****@example.com"
   //     );
   //   });
 
   //   test("masks email addresses with custom options", () => {
   //     expect(
-  //       Maskify.maskEmail("example@example.com", { emailMaskVisibleChars: 3 })
+  //       DataVeil.maskEmail("example@example.com", { emailMaskVisibleChars: 3 })
   //     ).toBe("exa****@example.com");
   //   });
 
   //   test("masks passwords with default options", () => {
-  //     expect(Maskify.maskPassword("supersecret")).toBe("***********");
+  //     expect(DataVeil.maskPassword("supersecret")).toBe("***********");
   //   });
 
   //   test("masks passwords with custom mask character", () => {
-  //     expect(Maskify.maskPassword("supersecret", { maskChar: "#" })).toBe(
+  //     expect(DataVeil.maskPassword("supersecret", { maskChar: "#" })).toBe(
   //       "###########"
   //     );
   //   });
 
   //   test("masks phone numbers with default options", () => {
-  //     expect(Maskify.maskPhoneNumber("123-456-7890")).toBe("******7890");
-  //     expect(Maskify.maskPhoneNumber("+123-456-7890")).toBe("+******7890");
-  //     expect(Maskify.maskPhoneNumber("00123-456-7890")).toBe("00******7890");
-  //     expect(Maskify.maskPhoneNumber("1234567890")).toBe("******7890");
+  //     expect(DataVeil.maskPhoneNumber("123-456-7890")).toBe("******7890");
+  //     expect(DataVeil.maskPhoneNumber("+123-456-7890")).toBe("+******7890");
+  //     expect(DataVeil.maskPhoneNumber("00123-456-7890")).toBe("00******7890");
+  //     expect(DataVeil.maskPhoneNumber("1234567890")).toBe("******7890");
   //   });
 
   //   test("masks phone numbers with custom options", () => {
   //     expect(
-  //       Maskify.maskPhoneNumber("123-456-7890", {
+  //       DataVeil.maskPhoneNumber("123-456-7890", {
   //         maskChar: "#",
   //         unmaskedStartDigits: 2,
   //         unmaskedEndDigits: 1,
   //       })
   //     ).toBe("12#######0");
   //     expect(
-  //       Maskify.maskPhoneNumber("+123-456-7890", {
+  //       DataVeil.maskPhoneNumber("+123-456-7890", {
   //         maskChar: "#",
   //         unmaskedStartDigits: 2,
   //         unmaskedEndDigits: 1,
   //       })
   //     ).toBe("+12#######0");
   //     expect(
-  //       Maskify.maskPhoneNumber("00123-456-7890", {
+  //       DataVeil.maskPhoneNumber("00123-456-7890", {
   //         maskChar: "#",
   //         unmaskedStartDigits: 2,
   //         unmaskedEndDigits: 1,
   //       })
   //     ).toBe("0012#######0");
   //     expect(
-  //       Maskify.maskPhoneNumber("1234567890", {
+  //       DataVeil.maskPhoneNumber("1234567890", {
   //         maskChar: "#",
   //         unmaskedStartDigits: 2,
   //         unmaskedEndDigits: 1,
@@ -77,12 +79,12 @@ describe("Maskify", () => {
   //   });
 
   //   test("masks substrings with default options", () => {
-  //     expect(Maskify.maskSubstring("hello world", "world")).toBe("hello *****");
+  //     expect(DataVeil.maskSubstring("hello world", "world")).toBe("hello *****");
   //   });
 
   //   test("masks substrings with custom options", () => {
   //     expect(
-  //       Maskify.maskSubstring("hello world world", "world", {
+  //       DataVeil.maskSubstring("hello world world", "world", {
   //         maskChar: "#",
   //         maskOnlyFirstOccurrence: true,
   //       })
@@ -90,14 +92,14 @@ describe("Maskify", () => {
   //   });
 
   //   test("masks UUIDs with default options", () => {
-  //     expect(Maskify.maskUUID("123e4567-e89b-12d3-a456-426614174000")).toBe(
+  //     expect(DataVeil.maskUUID("123e4567-e89b-12d3-a456-426614174000")).toBe(
   //       "********************************4000"
   //     );
   //   });
 
   //   test("masks UUIDs with custom options", () => {
   //     expect(
-  //       Maskify.maskUUID("123e4567-e89b-12d3-a456-426614174000", {
+  //       DataVeil.maskUUID("123e4567-e89b-12d3-a456-426614174000", {
   //         maskChar: "#",
   //         unmaskedStartDigits: 4,
   //         unmaskedEndDigits: 2,
@@ -106,20 +108,20 @@ describe("Maskify", () => {
   //   });
 
   //   test("masks JWT tokens with default options", () => {
-  //     expect(Maskify.maskJWT("header.payload.signature")).toBe(
+  //     expect(DataVeil.maskJWT("header.payload.signature")).toBe(
   //       "******.*******.*********"
   //     );
   //   });
 
   //   test("masks JWT tokens with custom mask character", () => {
-  //     expect(Maskify.maskJWT("header.payload.signature", { maskChar: "#" })).toBe(
+  //     expect(DataVeil.maskJWT("header.payload.signature", { maskChar: "#" })).toBe(
   //       "######.#######.#########"
   //     );
   //   });
 
   //   test("masks JSON fields with default options", () => {
   //     const json = { card: "1234567812345678", email: "example@example.com" };
-  //     const maskedJson = Maskify.maskJSON(json, ["card", "email"]);
+  //     const maskedJson = DataVeil.maskJSON(json, ["card", "email"]);
   //     expect(maskedJson).toEqual({
   //       card: "************5678",
   //       email: "ex*****@example.com",
@@ -128,7 +130,7 @@ describe("Maskify", () => {
 
   //   test("masks JSON fields with custom options", () => {
   //     const json = { card: "1234567812345678", email: "example@example.com" };
-  //     const maskedJson = Maskify.maskJSON(json, ["card", "email"], {
+  //     const maskedJson = DataVeil.maskJSON(json, ["card", "email"], {
   //       emailMaskVisibleChars: 3,
   //     });
   //     expect(maskedJson).toEqual({
@@ -139,12 +141,12 @@ describe("Maskify", () => {
 
   //   test("gets nested field from JSON", () => {
   //     const json = { a: { b: { c: "value" } } };
-  //     expect(Maskify.getNestedField(json, "a.b.c")).toBe("value");
+  //     expect(DataVeil.getNestedField(json, "a.b.c")).toBe("value");
   //   });
 
   //   test("sets nested field in JSON", () => {
   //     const json = { a: { b: { c: "value" } } };
-  //     Maskify.setNestedField(json, "a.b.c", "newValue");
+  //     DataVeil.setNestedField(json, "a.b.c", "newValue");
   //     expect(json.a?.b?.c).toBe("newValue");
   //   });
 });

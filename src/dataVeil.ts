@@ -18,7 +18,7 @@ type MaskOptions = {
   maskOnlyFirstOccurrence?: boolean;
 };
 
-export class Maskify {
+export class DataVeil {
   static defaultOptions: MaskOptions = {
     maskChar: "*",
     unmaskedStartDigits: 0,
@@ -78,5 +78,15 @@ export class Maskify {
     return setNestedField(json, fieldPath, value);
   }
 }
-export { maskCardNumber, maskEmail, maskPassword, maskPhoneNumber, maskSubstring, maskUUID, maskJWT, maskJSON, getNestedField, setNestedField };
-
+export {
+  maskCardNumber,
+  maskEmail,
+  maskPassword,
+  maskPhoneNumber,
+  maskSubstring,
+  maskUUID,
+  maskJWT,
+  maskJSON,
+  getNestedField,
+  setNestedField,
+};

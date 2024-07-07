@@ -1,9 +1,9 @@
 {
-  "name": "maskify",
+  "name": "dataveil",
   "version": "1.0.0",
-  "description": "Maskify is a robust and versatile library designed to mask sensitive data, ensuring data privacy and security in your applications.",
-  "main": "./dist/maskify.js",
-  "types": "./dist/types/maskify.d.ts",
+  "description": "DataVeil is a robust and versatile library designed to mask sensitive data, ensuring data privacy and security in your applications.",
+  "main": "./dist/dataveil.js",
+  "types": "./dist/types/dataveil.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AmJaradat01/Maskify.git"
+    "url": "https://github.com/AmJaradat01/dataveil.git"
   },
   "devDependencies": {
     "typescript": "^4.0.0",
@@ -38,7 +38,7 @@
   "author": "Ali Jaradat <AmJaradat01@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AmJaradat01/Maskify/issues"
+    "url": "https://github.com/AmJaradat01/dataveil/issues"
   },
-  "homepage": "https://github.com/AmJaradat01/Maskify#readme"
+  "homepage": "https://github.com/AmJaradat01/dataveil#readme"
 }
