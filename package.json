@@ -1,0 +1,44 @@
+{
+  "name": "maskify",
+  "version": "1.0.0",
+  "description": "Maskify is a robust and versatile library designed to mask sensitive data, ensuring data privacy and security in your applications.",
+  "main": "./dist/maskify.js",
+  "types": "./dist/types/maskify.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmJaradat01/Maskify.git"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "jest": "^26.0.0",
+    "ts-jest": "^26.0.0"
+  },
+  "keywords": [
+    "mask",
+    "data",
+    "security",
+    "typescript",
+    "privacy",
+    "json",
+    "uuid",
+    "jwt",
+    "email",
+    "phone",
+    "card",
+    "password",
+    "substring"
+  ],
+  "author": "Ali Jaradat <AmJaradat01@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AmJaradat01/Maskify/issues"
+  },
+  "homepage": "https://github.com/AmJaradat01/Maskify#readme"
+}
