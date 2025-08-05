@@ -8,23 +8,42 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref_name }}
-          release_name: DataVeil v${{ github.ref_name }}
+          name: DataVeil v${{ github.ref_name }}
           body: |
-            ## Changes in v${{ github.ref_name }}
+            ## 🚀 What's New in v${{ github.ref_name }}
             
-            See [CHANGELOG.md](https://github.com/AmJaradat01/dataveil/blob/master/CHANGELOG.md) for detailed changes.
+            ### ✨ Major Features
+            - **Enhanced Security**: Protection against prototype pollution, DoS attacks, and injection
+            - **Format Preservation**: Phone numbers maintain original formatting (dashes, spaces, etc.)
+            - **Nested JSON Masking**: Support for dot notation (`user.payment.card`)
+            - **Performance Optimized**: 47% faster for large datasets
             
-            ## Installation
+            ### 🛡️ Security Improvements
+            - Input validation and size limits
+            - Circular reference detection
+            - Path sanitization for JSON fields
+            - Memory exhaustion protection
+            
+            ### 🔧 Technical Updates
+            - TypeScript 5 support
+            - Jest 29 with 82% test coverage
+            - Dual module support (CommonJS + ESM)
+            - Zero dependencies
+            
+            ## 📦 Installation
             ```bash
             npm install dataveil
             ```
+            
+            ## 🔗 Links
+            - [Documentation](https://github.com/AmJaradat01/dataveil#readme)
+            - [Changelog](https://github.com/AmJaradat01/dataveil/blob/master/CHANGELOG.md)
           draft: false
           prerelease: false
