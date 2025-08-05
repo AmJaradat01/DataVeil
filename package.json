@@ -1,6 +1,6 @@
 {
   "name": "dataveil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A robust TypeScript library for masking sensitive data including card numbers, emails, passwords, phone numbers, and more.",
   "main": "./dist/index.js",
   "module": "./dist/esm/index.js",

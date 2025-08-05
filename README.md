@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/dataveil.svg)](https://badge.fury.io/js/dataveil)
 [![CI](https://github.com/AmJaradat01/dataveil/workflows/CI/badge.svg)](https://github.com/AmJaradat01/dataveil/actions)
-[![Coverage Status](https://coveralls.io/repos/github/AmJaradat01/dataveil/badge.svg?branch=main)](https://coveralls.io/github/AmJaradat01/dataveil?branch=main)
+[![Coverage](https://img.shields.io/badge/coverage-82%25-brightgreen)](https://github.com/AmJaradat01/dataveil)
 
 A robust TypeScript library for masking sensitive data including card numbers, email addresses, passwords, phone numbers, UUIDs, JWT tokens, and JSON objects. Perfect for GDPR compliance and data privacy protection.
 
