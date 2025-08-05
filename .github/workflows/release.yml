@@ -12,7 +12,21 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Check if release exists
+        id: release-check
+        run: |
+          RELEASE_TAG="${{ github.ref_name }}"
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release $RELEASE_TAG already exists, skipping"
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "Release $RELEASE_TAG does not exist, proceeding"
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Release
+        if: steps.release-check.outputs.skip == 'false'
         uses: softprops/action-gh-release@v1
         with:
           name: DataVeil v${{ github.ref_name }}
