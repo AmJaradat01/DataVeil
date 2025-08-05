@@ -1,4 +1,33 @@
-src
-tests
-.git
-.vscode
+# Source files (only dist should be published)
+src/
+tests/
+
+# Development files
+.github/
+.vscode/
+.idea/
+*.config.js
+*.config.cjs
+*.config.ts
+tsconfig*.json
+jest.config.*
+
+# Git and CI
+.git/
+.gitignore
+
+# Testing and coverage
+coverage/
+.nyc_output/
+
+# Environment
+.env*
+
+# Temporary
+*.tmp
+*.temp
+test.js
+
+# OS
+.DS_Store
+Thumbs.db

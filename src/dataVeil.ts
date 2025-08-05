@@ -64,7 +64,7 @@ export class DataVeil {
 
   static maskJSON(
     json: any,
-    fieldsToMask: string[],
+    fieldsToMask: (string | { path: string; type?: 'card' | 'email' | 'phone' | 'uuid' | 'password' | 'custom'; options?: MaskOptions })[],
     options: MaskOptions = {}
   ): any {
     return maskJSON(json, fieldsToMask, { ...this.defaultOptions, ...options });

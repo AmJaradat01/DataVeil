@@ -1,6 +1,10 @@
 export function getNestedField(json: any, fieldPath: string): any {
-    return fieldPath
-      .split(".")
-      .reduce((o, key) => (o && o[key] !== "undefined" ? o[key] : null), json);
-  }
+  if (!json || !fieldPath) return null;
+  
+  return fieldPath
+    .split(".")
+    .reduce((obj, key) => {
+      return obj && obj[key] !== undefined ? obj[key] : null;
+    }, json);
+}
   
