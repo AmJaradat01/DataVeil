@@ -1,44 +1,60 @@
 {
   "name": "dataveil",
-  "version": "1.0.0",
-  "description": "DataVeil is a robust and versatile library designed to mask sensitive data, ensuring data privacy and security in your applications.",
-  "main": "./dist/dataveil.js",
-  "types": "./dist/types/dataveil.d.ts",
+  "version": "1.1.0",
+  "description": "A robust TypeScript library for masking sensitive data including card numbers, emails, passwords, phone numbers, and more.",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
-  },
-  "directories": {
-    "test": "tests"
+    "build": "npm run clean && tsc && tsc -p tsconfig.esm.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build && npm test",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/AmJaradat01/dataveil.git"
   },
   "devDependencies": {
-    "typescript": "^4.0.0",
-    "jest": "^26.0.0",
-    "ts-jest": "^26.0.0"
+    "@types/jest": "^29.5.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0"
   },
   "keywords": [
-    "mask",
-    "data",
+    "data-masking",
+    "privacy",
     "security",
     "typescript",
-    "privacy",
-    "json",
-    "uuid",
+    "pii",
+    "gdpr",
+    "card-number",
+    "email-masking",
+    "phone-masking",
     "jwt",
-    "email",
-    "phone",
-    "card",
-    "password",
-    "substring"
+    "uuid",
+    "json-masking"
   ],
   "author": "Ali Jaradat <AmJaradat01@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AmJaradat01/dataveil/issues"
   },
-  "homepage": "https://github.com/AmJaradat01/dataveil#readme"
+  "homepage": "https://github.com/AmJaradat01/dataveil#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "sideEffects": false,
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/AmJaradat01"
+  }
 }
